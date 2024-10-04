@@ -1,0 +1,49 @@
+{% extends "plantilla.html" %}
+{% block content %}
+ {% load crispy_forms_tags %}
+    <!-- [ Layout content ] Start -->
+    <div class="layout-content">
+
+        <!-- [ content ] Start -->
+        <div class="container-fluid flex-grow-1 container-p-y">   
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="font-weight-bold py-3 mb-0">Producto</h4>
+                </div>
+                
+             </div>
+        <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                <li class="breadcrumb-item" >Producto</li>
+                <li class="breadcrumb-item active" >Registro</li>
+            </ol>
+        </div>
+    
+        
+            
+        <div class="card mb-4">
+            <h6 class="card-header">Registrar Producto</h6>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        {{ form | crispy}}
+                    
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a type="button" href="{% url 'listarproducto' %}" class="btn btn-secondary">Cancelar</a>
+                    
+                </form>
+            </div>
+        </div>
+               
+            
+        
+        
+    
+    
+    </div>
+    <!-- [ Layout content ] Start -->
+
+
+        
+{% endblock%} 

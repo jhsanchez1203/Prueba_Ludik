@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en" class="material-style layout-fixed">
+
+<head>
+    {% load static %}
+    <title>{% block title %} {% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Bhumlu Bootstrap admin template made using Bootstrap 4, it has tons of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="Bhumlu, bootstrap admin template, bootstrap admin panel, bootstrap 4 admin template, admin template">
+    <meta name="author" content="Srthemesvilla" />
+    
+    <link href="{% static 'favicon.png' %}" rel="icon">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- Icon fonts -->
+    <link rel="stylesheet" href="{% static 'admin_files/fonts/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/fonts/ionicons.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/fonts/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/fonts/open-iconic.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/fonts/pe-icon-7-stroke.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/fonts/feather.css' %}">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="{% static 'admin_files/css/bootstrap-material.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/css/shreerang-material.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/css/uikit.css' %}">
+    <link href="{% static 'admin_files/dataTables.bootstrap4.css' %}" rel="stylesheet" type="text/css">
+    <!-- Libs -->
+    <link rel="stylesheet" href="{% static 'admin_files/libs/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_files/libs/flot/flot.css' %}">
+    
+</head>
+
+<body>
+    <!-- [ Preloader ] Start -->
+    <div class="page-loader">
+        <div class="bg-primary"></div>
+    </div>
+    <!-- [ Preloader ] End -->
+
+    <!-- [ Layout wrapper ] Start -->
+    <div class="layout-wrapper layout-2">
+        <div class="layout-inner">
+            <!-- [ Layout sidenav ] Start -->
+<div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-dark">
+    <!-- Brand demo (see assets/css/demo/demo.css) -->
+    <div class="app-brand demo">
+        <a class="app-brand-logo demo layout-sidenav-toggle sidenav-link" href="javascript:;">
+            <img src="{% static 'admin_files/img/menu.png' %}"  class="img-fluid" >
+        </a> 
+        
+    </div>
+    
+    <!-- Links -->
+    <ul class="sidenav-inner py-1">
+        <!-- Dashboards -->
+        <li class="sidenav-item active">
+            <a href="{% url 'listarproducto' %}" class="sidenav-link">
+                <i class="sidenav-icon feather icon-home"></i>
+                <div>INICIO</div>
+               
+            </a>
+        </li>
+        <!-- producto -->
+        <li class="sidenav-item active">
+            <a href="{% url 'listarproducto' %}" class="sidenav-link ">
+                <img  src="{% static 'admin_files/img/agregar-producto.png' %}" alt="" width="30"></i>
+                <div style="margin-left: 10px;">PRODUCTOS</div>
+            </a>
+            
+        </li>  
+       
+       
+     
+    </ul>
+</div>
+<!-- [ Layout sidenav ] End -->
+            <!-- [ Layout container ] Start -->
+            <div class="layout-container">
+                <!-- [ Layout navbar ( Header ) ] Start -->
+<nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x" id="layout-navbar">
+
+    <!-- Brand demo (see assets/css/demo/demo.css) -->
+    <a href="index.html" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
+        <span class="app-brand-logo demo">
+            <img src="{% static 'admin_files/img/logo-dark.png' %}" alt="Brand Logo" class="img-fluid">
+        </span>
+        <span class="app-brand-text demo font-weight-normal ml-2">Bhumlu</span>
+    </a>
+    
+    <!-- Sidenav toggle (see assets/css/demo/demo.css) -->
+    <div class="layout-sidenav-toggle navbar-nav d-lg-none align-items-lg-center mr-auto">
+        <a class="nav-item nav-link px-0 mr-lg-4" href="javascript:">
+            <i class="ion ion-md-menu text-large align-middle"></i>
+        </a>
+    </div>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#layout-navbar-collapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="navbar-collapse collapse" id="layout-navbar-collapse">
+        <!-- Divider -->
+        <hr class="d-lg-none w-100 my-2">
+        
+        <div class="navbar-nav align-items-lg-center ">
+            <a class="nav-link " href="#" data-toggle="dropdown">
+                <span class="d-inline-flex  align-items-center align-middle">
+                    <img src="{% static 'admin_files/img/avatars/1.png' %}" alt class="d-block ui-w-30 rounded-circle">
+                    <span class="px-1 mr-lg-2 ml-2 " style="margin-left: 20px;"> Hola, {{user.username}}</span>
+                </span>
+            </a>
+        </div>
+        
+        <div class="navbar-nav align-items-lg-center ml-auto">
+            
+    
+           
+    
+            <!-- Divider -->
+            
+            <div class="demo-navbar-user nav-item dropdown">
+                <a href="{% url 'logout' %}" class="dropdown-item btn-cerrar">
+                    <i class="feather text-white"><img  src="{% static 'admin_files/img/cerrar-sesion.png' %}" alt="" width="20"></i> &nbsp; Cerrar Sesión
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    </nav>
+    <!-- [ Layout navbar ( Header ) ] End -->
+
+                <!-- CONTENIDO -->
+                <div class="layout-content">
+
+                    {% block content %}
+                    {% endblock %}
+
+                    
+                    <!-- [ Layout footer ] End -->
+                </div>
+                <!-- [ Layout content ] Start -->
+            </div>
+            <!-- [ Layout container ] End -->
+        </div>
+        <!-- Overlay -->
+        <div class="layout-overlay layout-sidenav-toggle"></div>
+    </div>
+    <!-- [ Layout wrapper] End -->
+
+    <!-- Core scripts -->
+    <script src="{% static 'admin_files/js/pace.js' %}"></script>
+    <script src="{% static 'admin_files/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'admin_files/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'admin_files/js/bootstrap.js' %}"></script>
+    <script src="{% static 'admin_files/js/sidenav.js' %}"></script>
+    <script src="{% static 'admin_files/js/layout-helpers.js' %}"></script>
+    <script src="{% static 'admin_files/js/material-ripple.js' %}"></script>
+
+    <!-- Libs -->
+    <script src="{% static 'admin_files/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'admin_files/libs/eve/eve.js' %}"></script>
+    <script src="{% static 'admin_files/libs/flot/flot.js' %}"></script>
+    <script src="{% static 'admin_files/libs/flot/curvedLines.js' %}"></script>
+    <script src="{% static 'admin_files/libs/chart-am4/core.js' %}"></script>
+    <script src="{% static 'admin_files/libs/chart-am4/charts.js' %}"></script>
+    <script src="{% static 'admin_files/libs/chart-am4/animated.js' %}"></script>
+    <script src="{% static 'admin_files/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'admin_files/dataTables.bootstrap4.js' %}"></script>
+    <script src="{% static 'admin_files/dataTables.responsive.min.js' %}"></script>
+    <!-- Demo -->
+    <script src="{% static 'admin_files/js/demo.js' %}"></script>
+    <script src="{% static 'admin_files/js/analytics.js' %}"></script>
+    <script src="{% static 'admin_files/js/pages/dashboards_index.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            $('#basic-datatable').DataTable({
+                language: {
+                    paginate: {
+                        next: 'Siguiente',
+                        previous: 'Anterior'
+                    }
+                }
+            });
+            $("#botonmenu").click();
+            $("#otroboton").removeClass("fa fa-arrow-right");
+            $("#otroboton").addClass("fa fa-arrow-left");
+        });
+    </script>
+    {% block js %} {% endblock %}
+</body>
+
+</html>
